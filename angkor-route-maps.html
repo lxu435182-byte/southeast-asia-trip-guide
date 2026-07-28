@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>吴哥三日票路线图 | 2026.8.7-8.9</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #1d2520;
+        --muted: #66726a;
+        --paper: #f5f1e8;
+        --panel: #fffdf8;
+        --panel-soft: #ebe7db;
+        --line: #d6ccb9;
+        --green: #2c6f5a;
+        --clay: #b45f3f;
+        --gold: #b8842d;
+        --water: #4f88a7;
+        --shadow: 0 18px 44px rgba(47, 43, 35, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter, "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+        color: var(--ink);
+        background:
+          linear-gradient(135deg, rgba(44, 111, 90, 0.12), transparent 38%),
+          linear-gradient(180deg, #fcfaf4 0%, var(--paper) 100%);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      .page {
+        width: min(1180px, calc(100% - 28px));
+        margin: 0 auto;
+        padding: 24px 0 56px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
+        gap: 24px;
+        align-items: stretch;
+        margin-bottom: 22px;
+      }
+
+      .hero-copy,
+      .hero-summary,
+      .day,
+      .note-card,
+      .photo-card {
+        background: rgba(255, 253, 248, 0.9);
+        border: 1px solid rgba(214, 204, 185, 0.9);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-copy {
+        padding: clamp(22px, 4vw, 38px);
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--clay);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 14px;
+        font-size: clamp(30px, 7vw, 58px);
+        line-height: 1.02;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 8px;
+        font-size: clamp(24px, 4.8vw, 38px);
+        line-height: 1.08;
+        letter-spacing: 0;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .intro {
+        max-width: 760px;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.75;
+      }
+
+      .hero-summary {
+        display: grid;
+        gap: 12px;
+        padding: 18px;
+      }
+
+      .summary-row {
+        display: grid;
+        grid-template-columns: 70px 1fr;
+        gap: 10px;
+        padding: 12px;
+        background: rgba(235, 231, 219, 0.65);
+        border-radius: 10px;
+      }
+
+      .summary-row strong {
+        color: var(--green);
+      }
+
+      .summary-row span {
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .day {
+        overflow: hidden;
+        margin-top: 22px;
+      }
+
+      .day-head {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 14px;
+        align-items: end;
+        padding: 22px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .day-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-end;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: 6px 10px;
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 700;
+        background: rgba(44, 111, 90, 0.1);
+        border: 1px solid rgba(44, 111, 90, 0.18);
+        border-radius: 999px;
+      }
+
+      .day-body {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+        gap: 0;
+      }
+
+      .map-zone {
+        padding: 18px;
+        background:
+          linear-gradient(90deg, rgba(255, 253, 248, 0.45) 1px, transparent 1px),
+          linear-gradient(rgba(255, 253, 248, 0.45) 1px, transparent 1px),
+          linear-gradient(135deg, rgba(79, 136, 167, 0.16), rgba(184, 132, 45, 0.08));
+        background-size: 28px 28px, 28px 28px, auto;
+        border-right: 1px solid var(--line);
+      }
+
+      .map-frame {
+        position: sticky;
+        top: 16px;
+      }
+
+      .route-map {
+        width: 100%;
+        min-height: 360px;
+        border-radius: 10px;
+      }
+
+      .route-map text {
+        font-family: inherit;
+      }
+
+      .map-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        min-height: 40px;
+        padding: 9px 12px;
+        color: var(--panel);
+        font-size: 14px;
+        font-weight: 800;
+        background: var(--green);
+        border-radius: 9px;
+      }
+
+      .btn.secondary {
+        color: var(--ink);
+        background: rgba(235, 231, 219, 0.9);
+        border: 1px solid var(--line);
+      }
+
+      .detail-zone {
+        padding: 18px;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 74px 1fr;
+        gap: 12px;
+        align-items: start;
+        padding: 12px;
+        background: rgba(235, 231, 219, 0.46);
+        border-radius: 10px;
+      }
+
+      .time {
+        color: var(--clay);
+        font-weight: 800;
+      }
+
+      .timeline-item p {
+        margin-bottom: 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .photo-card {
+        overflow: hidden;
+        box-shadow: none;
+      }
+
+      .photo-card img {
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        background: var(--panel-soft);
+      }
+
+      .photo-card-body {
+        padding: 12px;
+      }
+
+      .photo-card h3 {
+        margin-bottom: 4px;
+        font-size: 16px;
+      }
+
+      .photo-card p {
+        margin-bottom: 10px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .mini-link {
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .notes {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .note-card {
+        padding: 16px;
+        box-shadow: none;
+      }
+
+      .note-card p {
+        margin-bottom: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .footer {
+        margin-top: 28px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      @media (max-width: 860px) {
+        .hero,
+        .day-body {
+          grid-template-columns: 1fr;
+        }
+
+        .day-head {
+          grid-template-columns: 1fr;
+        }
+
+        .day-meta {
+          justify-content: flex-start;
+        }
+
+        .map-zone {
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .map-frame {
+          position: static;
+        }
+
+        .notes {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .page {
+          width: min(100% - 18px, 1180px);
+          padding-top: 10px;
+        }
+
+        .hero-copy,
+        .hero-summary,
+        .day-head,
+        .map-zone,
+        .detail-zone {
+          padding: 14px;
+        }
+
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .timeline-item {
+          grid-template-columns: 62px 1fr;
+        }
+
+        .route-map {
+          min-height: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Angkor 3-day pass</p>
+          <h1>吴哥三日票现场路线图</h1>
+          <p class="intro">
+            按你们 8.6 夜巴、8.7 早到暹粒、8.10 下午飞机的节奏重排：8.7 轻量远寺，8.8 小圈精华，8.9 大圈精选，8.10 不进景区。每一天都留出吃饭和午休，累了就按卡片里的“可删点”收缩。
+          </p>
+        </div>
+        <aside class="hero-summary" aria-label="路线摘要">
+          <div class="summary-row"><strong>8.7</strong><span>女王宫线：坐车多、步行少，夜巴后不硬撑。</span></div>
+          <div class="summary-row"><strong>8.8</strong><span>小圈精华：吴哥寺、巴戎、塔布茏，一天抓住核心。</span></div>
+          <div class="summary-row"><strong>8.9</strong><span>大圈精选：圣剑寺、龙蟠水池、塔逊，安静有遗址感。</span></div>
+        </aside>
+      </section>
+
+      <section id="routes"></section>
+
+      <section class="notes" aria-label="现场使用提示">
+        <article class="note-card">
+          <h3>手机使用</h3>
+          <p>出发前把本页和 Google Maps 路线都打开一次；景区里信号不稳，最好同时下载 Google Maps 离线地图或 Maps.me。</p>
+        </article>
+        <article class="note-card">
+          <h3>和司机沟通</h3>
+          <p>每天直接给司机看路线图和 Google Maps 链接，重点确认出发时间、午休是否回酒店、最后一个点是否可取消。</p>
+        </article>
+        <article class="note-card">
+          <h3>体力规则</h3>
+          <p>每天只保留 2-3 个“必看点”。下午如果下雨或疲惫，删最后一站，不要压缩午饭和午休。</p>
+        </article>
+      </section>
+
+      <p class="footer">
+        坐标参考 Angkor Sites Temples 公共表、OpenStreetMap/Mapcarta、Wikimedia Commons 图片坐标与公开地图资料；现场以 Google Maps 实时道路和 tuk-tuk 司机判断为准。照片来自 Wikimedia Commons 的可共享图片，页面内使用 Special:FilePath 缩略图链接，合并到正式网页时可按许可证补充作者署名。
+      </p>
+    </main>
+
+    <script>
+      const img = (file) =>
+        "https://commons.wikimedia.org/wiki/Special:FilePath/" +
+        encodeURIComponent(file) +
+        "?width=900";
+
+      const days = [
+        {
+          id: "day-1",
+          date: "8.7",
+          title: "女王宫线：夜巴后轻量开局",
+          subtitle: "酒店出发，下午看雕刻精华；不安排日出，不压体力。",
+          tags: ["14:00 出发", "2 个必看点", "步行轻"],
+          mapLink:
+            "https://www.google.com/maps/dir/?api=1&origin=Home+Indochine+d%27Angkor,+Siem+Reap&destination=Home+Indochine+d%27Angkor,+Siem+Reap&waypoints=Angkor+Ticket+Office%7CBanteay+Srei%7CBanteay+Samre%7CPre+Rup&travelmode=driving",
+          streetLink: "https://www.google.com/maps/about/behind-the-scenes/streetview/treks/angkor/",
+          timeline: [
+            ["05:58", "到暹粒 Larryta 终点，先去酒店寄存行李、吃早餐、补觉。"],
+            ["14:00", "从酒店出发，先过票务/验票点，再去女王宫。"],
+            ["15:00", "女王宫慢看门楣和山墙浮雕，不赶时间。"],
+            ["16:45", "班提色玛走中央轴线，游客少，适合安静收尾。"],
+            ["17:45", "比粒寺只作为可选夕阳点；累了直接回酒店。"]
+          ],
+          points: [
+            { name: "酒店", label: "Home", lat: 13.35192, lng: 103.86293, type: "base" },
+            { name: "票务/验票", label: "票", lat: 13.3777, lng: 103.8614, type: "ticket" },
+            {
+              name: "女王宫",
+              en: "Banteay Srei",
+              label: "1",
+              lat: 13.599024,
+              lng: 103.962985,
+              minutes: "70 分钟",
+              image: img("Banteay Srei full.jpg"),
+              note: "红砂岩精雕细刻，是这天的核心。重点看门楣、山墙、神话浮雕。",
+              maps: "https://www.google.com/maps/search/?api=1&query=Banteay+Srei"
+            },
+            {
+              name: "班提色玛",
+              en: "Banteay Samre",
+              label: "2",
+              lat: 13.442103,
+              lng: 103.958924,
+              minutes: "35-45 分钟",
+              image: img("Banteay Samré, Angkor 10.jpg"),
+              note: "结构完整、人少，沿外门、参道、中央殿堂绕一圈即可。",
+              maps: "https://www.google.com/maps/search/?api=1&query=Banteay+Samre"
+            },
+            {
+              name: "比粒寺",
+              en: "Pre Rup",
+              label: "可选",
+              lat: 13.43496,
+              lng: 103.92057,
+              minutes: "25-35 分钟",
+              image: img("Pre Rup temple.jpg"),
+              note: "只在天气好且不累时看夕阳；雨天或疲惫直接删。",
+              maps: "https://www.google.com/maps/search/?api=1&query=Pre+Rup"
+            }
+          ]
+        },
+        {
+          id: "day-2",
+          date: "8.8",
+          title: "小圈精华：吴哥的最高浓度",
+          subtitle: "日出、吴哥寺、巴戎、塔布茏。中午必须撤回吃饭休息。",
+          tags: ["04:30 出发", "3 个必看点", "中午午休"],
+          mapLink:
+            "https://www.google.com/maps/dir/?api=1&origin=Home+Indochine+d%27Angkor,+Siem+Reap&destination=Home+Indochine+d%27Angkor,+Siem+Reap&waypoints=Angkor+Wat%7CAngkor+Thom+South+Gate%7CBayon+Temple%7CTerrace+of+the+Elephants%7CTa+Prohm+Temple%7CBanteay+Kdei&travelmode=driving",
+          streetLink: "https://www.google.com/maps/about/behind-the-scenes/streetview/treks/angkor/",
+          timeline: [
+            ["04:30", "酒店出发，直接去吴哥寺西门。"],
+            ["05:00", "北侧莲花池看日出，人多就往左后方站。"],
+            ["06:15", "吴哥寺内部走西参道、第一回廊、乳海翻腾、中央塔外侧。"],
+            ["09:30", "南门进入通王城，重点看巴戎四面佛。"],
+            ["11:45", "午餐 + 回酒店午休，别继续暴晒。"],
+            ["14:45", "塔布茏走木栈道看树根与回廊，班黛喀蒂可选。"]
+          ],
+          points: [
+            { name: "酒店", label: "Home", lat: 13.35192, lng: 103.86293, type: "base" },
+            {
+              name: "吴哥寺",
+              en: "Angkor Wat",
+              label: "1",
+              lat: 13.412486,
+              lng: 103.865358,
+              minutes: "120-150 分钟",
+              image: img("Angkor Wat sunrise.jpg"),
+              note: "西门进，北莲花池日出；内部重点看第一回廊《乳海翻腾》和中央塔。",
+              maps: "https://www.google.com/maps/search/?api=1&query=Angkor+Wat"
+            },
+            {
+              name: "南门",
+              en: "South Gate",
+              label: "2",
+              lat: 13.4318,
+              lng: 103.8586,
+              minutes: "10 分钟",
+              image: img("Angkor Thom South Gate (9722398449).jpg"),
+              note: "让司机慢一点，桥上看神魔拉蛇像和城门四面佛。",
+              maps: "https://www.google.com/maps/search/?api=1&query=Angkor+Thom+South+Gate"
+            },
+            {
+              name: "巴戎寺",
+              en: "Bayon",
+              label: "3",
+              lat: 13.441216,
+              lng: 103.858566,
+              minutes: "55-70 分钟",
+              image: img("Faces on Prasat Bayon - Angkor Thom (6208401646).jpg"),
+              note: "从外圈浮雕开始，再上层看四面佛；这是通王城的核心。",
+              maps: "https://www.google.com/maps/search/?api=1&query=Bayon+Temple"
+            },
+            {
+              name: "斗象台",
+              en: "Terraces",
+              label: "4",
+              lat: 13.447101,
+              lng: 103.858995,
+              minutes: "20-25 分钟",
+              image: img("Terrace of the Elephants (54).jpg"),
+              note: "平地轻松走，和癞王台一起作为上午收尾。",
+              maps: "https://www.google.com/maps/search/?api=1&query=Terrace+of+the+Elephants"
+            },
+            {
+              name: "塔布茏",
+              en: "Ta Prohm",
+              label: "5",
+              lat: 13.43489,
+              lng: 103.8893,
+              minutes: "60-75 分钟",
+              image: img("Ta Prohm Angkor giant root.jpg"),
+              note: "下午只看这一处也值得。沿木栈道走，重点是树根、塌落回廊和中央庭院。",
+              maps: "https://www.google.com/maps/search/?api=1&query=Ta+Prohm"
+            },
+            {
+              name: "班黛喀蒂",
+              en: "Banteay Kdei",
+              label: "可选",
+              lat: 13.430123,
+              lng: 103.898081,
+              minutes: "25-35 分钟",
+              image: img("Banteay Kdei, Angkor 01.jpg"),
+              note: "如果塔布茏后还有体力再去；下雨或累了直接回酒店。",
+              maps: "https://www.google.com/maps/search/?api=1&query=Banteay+Kdei"
+            }
+          ]
+        },
+        {
+          id: "day-3",
+          date: "8.9",
+          title: "大圈精选：安静、纵深、雨季水景",
+          subtitle: "不强行早起，上午看最值得的大圈寺庙，下午只保留一个弹性夕阳点。",
+          tags: ["07:30 出发", "上午重点", "下午可休"],
+          mapLink:
+            "https://www.google.com/maps/dir/?api=1&origin=Home+Indochine+d%27Angkor,+Siem+Reap&destination=Home+Indochine+d%27Angkor,+Siem+Reap&waypoints=Preah+Khan+Temple%7CNeak+Pean%7CTa+Som%7CEast+Mebon%7CPre+Rup&travelmode=driving",
+          streetLink: "https://www.google.com/maps/about/behind-the-scenes/streetview/treks/angkor/",
+          timeline: [
+            ["07:30", "酒店出发，不再强行日出。"],
+            ["08:00", "圣剑寺西门进、东门出，尽量不走回头路。"],
+            ["09:50", "龙蟠水池走木栈道，看雨季水面。"],
+            ["10:45", "塔逊看东门树门，小而精。"],
+            ["11:45", "东梅奔短停，随后午饭 + 回酒店休息。"],
+            ["16:00", "比粒寺夕阳可选；如果累了，下午完全不进景区。"]
+          ],
+          points: [
+            { name: "酒店", label: "Home", lat: 13.35192, lng: 103.86293, type: "base" },
+            {
+              name: "圣剑寺",
+              en: "Preah Khan",
+              label: "1",
+              lat: 13.46188,
+              lng: 103.87158,
+              minutes: "80-90 分钟",
+              image: img("Entrance to the Preah Khan temple, Angkor, Cambodia.jpg"),
+              note: "大圈最值得细看的点。西门进，穿过中央长廊，从东门出。",
+              maps: "https://www.google.com/maps/search/?api=1&query=Preah+Khan+Temple"
+            },
+            {
+              name: "龙蟠水池",
+              en: "Neak Pean",
+              label: "2",
+              lat: 13.4636,
+              lng: 103.8954,
+              minutes: "25-35 分钟",
+              image: img("Neak pean 2009 1.jpg"),
+              note: "停车点到中央水池要走木栈道；雨季水面更好看。",
+              maps: "https://www.google.com/maps/search/?api=1&query=Neak+Pean"
+            },
+            {
+              name: "塔逊",
+              en: "Ta Som",
+              label: "3",
+              lat: 13.46466,
+              lng: 103.91301,
+              minutes: "30-40 分钟",
+              image: img("Ta Som 05.jpg"),
+              note: "从西门进，走到东门树门；拍完可让司机在东侧接。",
+              maps: "https://www.google.com/maps/search/?api=1&query=Ta+Som"
+            },
+            {
+              name: "东梅奔",
+              en: "East Mebon",
+              label: "4",
+              lat: 13.446605,
+              lng: 103.920209,
+              minutes: "30-40 分钟",
+              image: img("East Mebon (9713311789).jpg"),
+              note: "看砖塔、象雕和曾经位于东池岛上的结构感。",
+              maps: "https://www.google.com/maps/search/?api=1&query=East+Mebon"
+            },
+            {
+              name: "比粒寺",
+              en: "Pre Rup",
+              label: "可选",
+              lat: 13.43496,
+              lng: 103.92057,
+              minutes: "30-45 分钟",
+              image: img("Prè Rup (Angkor) (6953384297).jpg"),
+              note: "下午天气好再去；如果 8.7 已看过，建议直接删，保留休息。",
+              maps: "https://www.google.com/maps/search/?api=1&query=Pre+Rup"
+            }
+          ]
+        }
+      ];
+
+      const routes = document.getElementById("routes");
+
+      function project(points, width, height) {
+        const lats = points.map((p) => p.lat);
+        const lngs = points.map((p) => p.lng);
+        const pad = 42;
+        const minLat = Math.min(...lats);
+        const maxLat = Math.max(...lats);
+        const minLng = Math.min(...lngs);
+        const maxLng = Math.max(...lngs);
+        const latRange = maxLat - minLat || 1;
+        const lngRange = maxLng - minLng || 1;
+        return points.map((p) => ({
+          ...p,
+          x: pad + ((p.lng - minLng) / lngRange) * (width - pad * 2),
+          y: pad + ((maxLat - p.lat) / latRange) * (height - pad * 2)
+        }));
+      }
+
+      function routeSvg(day) {
+        const width = 560;
+        const height = 420;
+        const pts = project(day.points, width, height);
+        const line = pts.map((p) => `${p.x},${p.y}`).join(" ");
+        const circles = pts
+          .map((p, index) => {
+            const isBase = p.type === "base";
+            const r = isBase ? 15 : 17;
+            const label = p.label.length > 2 ? p.label : p.label;
+            const dx = p.x > width * 0.72 ? -96 : 22;
+            const anchor = p.x > width * 0.72 ? "end" : "start";
+            return `
+              <g>
+                <circle cx="${p.x}" cy="${p.y}" r="${r + 5}" fill="${isBase ? "rgba(79,136,167,.18)" : "rgba(180,95,63,.16)"}"></circle>
+                <circle cx="${p.x}" cy="${p.y}" r="${r}" fill="${isBase ? "var(--water)" : "var(--clay)"}"></circle>
+                <text x="${p.x}" y="${p.y + 4}" text-anchor="middle" fill="#fff" font-size="${label === "可选" ? 10 : 12}" font-weight="800">${label}</text>
+                <text x="${p.x + dx}" y="${p.y - 4}" text-anchor="${anchor}" fill="var(--ink)" font-size="13" font-weight="800">${p.name}</text>
+                <text x="${p.x + dx}" y="${p.y + 14}" text-anchor="${anchor}" fill="var(--muted)" font-size="11">${index === 0 ? "出发/返回" : p.minutes || ""}</text>
+              </g>`;
+          })
+          .join("");
+        return `
+          <svg class="route-map" viewBox="0 0 ${width} ${height}" role="img" aria-label="${day.date} ${day.title}路线图">
+            <defs>
+              <marker id="${day.id}-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--green)"></path>
+              </marker>
+            </defs>
+            <rect x="0" y="0" width="${width}" height="${height}" fill="rgba(255,253,248,.46)" rx="14"></rect>
+            <text x="22" y="30" fill="var(--muted)" font-size="12">N ↑   schematic route, not to scale</text>
+            <polyline points="${line}" fill="none" stroke="var(--green)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#${day.id}-arrow)"></polyline>
+            <polyline points="${line}" fill="none" stroke="rgba(255,253,248,.72)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            ${circles}
+          </svg>`;
+      }
+
+      function card(point) {
+        if (point.type === "base" || point.type === "ticket") return "";
+        return `
+          <article class="photo-card">
+            <img src="${point.image}" alt="${point.name} ${point.en || ""}" loading="lazy">
+            <div class="photo-card-body">
+              <h3>${point.name} <span class="mini-link">${point.en || ""}</span></h3>
+              <p>${point.note}</p>
+              <a class="mini-link" href="${point.maps}" target="_blank" rel="noreferrer">打开单点地图</a>
+            </div>
+          </article>`;
+      }
+
+      routes.innerHTML = days
+        .map(
+          (day) => `
+            <section class="day" id="${day.id}">
+              <header class="day-head">
+                <div>
+                  <p class="eyebrow">${day.date}</p>
+                  <h2>${day.title}</h2>
+                  <p class="intro">${day.subtitle}</p>
+                </div>
+                <div class="day-meta">${day.tags.map((tag) => `<span class="pill">${tag}</span>`).join("")}</div>
+              </header>
+              <div class="day-body">
+                <div class="map-zone">
+                  <div class="map-frame">
+                    ${routeSvg(day)}
+                    <div class="map-actions">
+                      <a class="btn" href="${day.mapLink}" target="_blank" rel="noreferrer">打开 Google Maps 总路线</a>
+                      <a class="btn secondary" href="${day.streetLink}" target="_blank" rel="noreferrer">Google 街景预览</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="detail-zone">
+                  <div class="timeline">
+                    ${day.timeline.map((item) => `<div class="timeline-item"><strong class="time">${item[0]}</strong><p>${item[1]}</p></div>`).join("")}
+                  </div>
+                  <div class="cards">
+                    ${day.points.map(card).join("")}
+                  </div>
+                </div>
+              </div>
+            </section>`
+        )
+        .join("");
+    </script>
+  </body>
+</html>
