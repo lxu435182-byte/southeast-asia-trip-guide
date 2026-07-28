@@ -270,6 +270,60 @@ h1 {
   margin-bottom: 22px;
 }
 
+.map-embed-card {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.42fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  margin-bottom: 18px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(25, 33, 43, 0.06);
+}
+
+.map-embed-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.map-embed-copy h3 {
+  margin-bottom: 0;
+  font-size: 24px;
+}
+
+.map-embed-copy p:not(.eyebrow) {
+  margin-bottom: 0;
+  color: #4d5965;
+  line-height: 1.7;
+}
+
+.map-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.map-frame-wrap {
+  min-height: 540px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f6f1e7;
+}
+
+.map-frame-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  border: 0;
+}
+
 h2 {
   margin-bottom: 0;
   font-size: clamp(26px, 4vw, 42px);
@@ -649,8 +703,14 @@ h2 {
 @media (max-width: 920px) {
   .overview,
   .two-column,
-  .entry-layout {
+  .entry-layout,
+  .map-embed-card {
     grid-template-columns: 1fr;
+  }
+
+  .map-frame-wrap,
+  .map-frame-wrap iframe {
+    min-height: 620px;
   }
 
   .overview {
@@ -691,6 +751,15 @@ h2 {
   .guide-grid,
   .alert {
     grid-template-columns: 1fr;
+  }
+
+  .map-embed-card {
+    padding: 14px;
+  }
+
+  .map-frame-wrap,
+  .map-frame-wrap iframe {
+    min-height: 560px;
   }
 
   .quick-stats article {
