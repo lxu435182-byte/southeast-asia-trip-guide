@@ -48,6 +48,11 @@ const sources = {
   lakCny: "https://www.worldforexrates.com/lak/cny/100000-exchange-rate/",
 };
 
+const mapLink = (label, query = label) => ({
+  label,
+  url: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`,
+});
+
 const angkorGuide = [
   {
     title: "行程定位",
@@ -256,6 +261,23 @@ const itinerary = [
     ],
     panels: [
       {
+        title: "地点地图",
+        items: [
+          "当天涉及的机场、寄存/夜巴区域、景点和上车点都在这里；出发前建议逐个打开并收藏。",
+        ],
+        links: [
+          mapLink("广州白云 T3", "Guangzhou Baiyun International Airport Terminal 3"),
+          mapLink("Techo International Airport / KTI", "Techo International Airport Phnom Penh"),
+          mapLink("Phnom Penh Riverside", "Phnom Penh Riverside"),
+          mapLink("Phnom Penh Night Market", "Phnom Penh Night Market"),
+          mapLink("Royal Palace Phnom Penh", "Royal Palace Phnom Penh"),
+          mapLink("Silver Pagoda", "Silver Pagoda Phnom Penh"),
+          mapLink("National Museum of Cambodia", "National Museum of Cambodia Phnom Penh"),
+          mapLink("Wat Phnom", "Wat Phnom Phnom Penh"),
+          mapLink("夜巴上车点 France St.47", "Phnom Penh France St.47"),
+        ],
+      },
+      {
         title: "航班信息",
         items: [
           "已购航班：柬埔寨国家航空 K60611，经济舱，有小食。",
@@ -351,6 +373,21 @@ const itinerary = [
     ],
     panels: [
       {
+        title: "地点地图",
+        items: [
+          "这天从夜巴下车点到酒店、市区轻松逛和洞里萨湖码头，所有地点都可直接跳 Google Maps。",
+        ],
+        links: [
+          mapLink("夜巴下车点 Chong Kaosou Village", "Siem Reap Chong Kaosou Village"),
+          mapLink("Home Indochine d'Angkor", "Home Indochine d'Angkor Siem Reap"),
+          mapLink("Wat Bo", "Wat Bo Siem Reap"),
+          mapLink("Siem Reap Riverside", "Siem Reap Riverside"),
+          mapLink("Old Market", "Old Market Siem Reap"),
+          mapLink("Pub Street", "Pub Street Siem Reap"),
+          mapLink("Kampong Phluk", "Kampong Phluk Cambodia"),
+        ],
+      },
+      {
         title: "当天策略",
         items: [
           "这天不使用吴哥三日票，核心是恢复体力、熟悉市区、下午看洞里萨湖日落。",
@@ -406,6 +443,23 @@ const itinerary = [
     ],
     panels: [
       {
+        title: "地点地图",
+        items: [
+          "小圈核心点和可选点都在这里；早上直接打开吴哥寺，下午按体力决定是否点班黛喀蒂或皇家浴池。",
+        ],
+        links: [
+          mapLink("Home Indochine d'Angkor", "Home Indochine d'Angkor Siem Reap"),
+          mapLink("Angkor Wat 吴哥寺", "Angkor Wat"),
+          mapLink("Angkor Thom South Gate", "Angkor Thom South Gate"),
+          mapLink("Bayon 巴戎寺", "Bayon Temple Cambodia"),
+          mapLink("Terrace of the Elephants", "Terrace of the Elephants Angkor"),
+          mapLink("Terrace of the Leper King", "Terrace of the Leper King"),
+          mapLink("Ta Prohm 塔布茏", "Ta Prohm Temple"),
+          mapLink("Banteay Kdei", "Banteay Kdei"),
+          mapLink("Srah Srang 皇家浴池", "Srah Srang"),
+        ],
+      },
+      {
         title: "当天策略",
         items: [
           "这天使用吴哥三日票第 1 天，是全程最重要的一天；真正必须保留的是吴哥寺、巴戎寺、塔布茏寺。",
@@ -455,6 +509,19 @@ const itinerary = [
     ],
     panels: [
       {
+        title: "地点地图",
+        items: [
+          "女王宫较远，建议提前把地图点发给司机；圣剑寺记得约东门接。",
+        ],
+        links: [
+          mapLink("Home Indochine d'Angkor", "Home Indochine d'Angkor Siem Reap"),
+          mapLink("Banteay Srei 女王宫", "Banteay Srei"),
+          mapLink("Banteay Samre 班提色玛", "Banteay Samre"),
+          mapLink("Preah Khan 圣剑寺", "Preah Khan Temple"),
+          mapLink("Neak Pean 龙蟠水池", "Neak Pean"),
+        ],
+      },
+      {
         title: "当天策略",
         items: [
           "这天使用吴哥三日票第 2 天。女王宫较远，更建议包车；tuk-tuk 也可以但会更晒更颠。",
@@ -503,6 +570,21 @@ const itinerary = [
       { time: "晚", text: "入住 3 Howw Hostel at Sukhumvit 21" },
     ],
     panels: [
+      {
+        title: "地点地图",
+        items: [
+          "离开日只走上午短线；机场链接也放在这里，方便午后直接导航。",
+        ],
+        links: [
+          mapLink("Home Indochine d'Angkor", "Home Indochine d'Angkor Siem Reap"),
+          mapLink("Ta Som 塔逊", "Ta Som Temple"),
+          mapLink("East Mebon 东梅奔", "East Mebon"),
+          mapLink("Pre Rup 比粒寺", "Pre Rup"),
+          mapLink("Siem Reap Angkor International Airport / SAI", "Siem Reap Angkor International Airport"),
+          mapLink("Don Mueang T1", "Don Mueang International Airport Terminal 1"),
+          mapLink("3Howw Hostel Sukhumvit 21", "3Howw Hostel at Sukhumvit 21 Bangkok"),
+        ],
+      },
       {
         title: "离开日策略",
         items: [
@@ -584,6 +666,18 @@ const itinerary = [
     ],
     panels: [
       {
+        title: "地点地图",
+        items: [
+          "曼谷住宿和大城遗址入口先收藏；当天具体包车/火车路线可用这两个点做起终点。",
+        ],
+        links: [
+          mapLink("3Howw Hostel Sukhumvit 21", "3Howw Hostel at Sukhumvit 21 Bangkok"),
+          mapLink("Ayutthaya Historical Park", "Ayutthaya Historical Park"),
+          mapLink("Wat Mahathat Ayutthaya", "Wat Mahathat Ayutthaya"),
+          mapLink("Wat Phra Si Sanphet", "Wat Phra Si Sanphet"),
+        ],
+      },
+      {
         title: "当天提醒",
         items: [
           "护照原件建议锁在住宿处，外出带护照首页和入境章照片。",
@@ -608,6 +702,20 @@ const itinerary = [
       { time: "晚", text: "沿 Khem Kong Road 湄公河边散步，早点休息，第二天早起看托钵" },
     ],
     panels: [
+      {
+        title: "地点地图",
+        items: [
+          "曼谷出发、琅勃拉邦抵达、酒店和夜市这些第一天必用地点都放在这里。",
+        ],
+        links: [
+          mapLink("3Howw Hostel Sukhumvit 21", "3Howw Hostel at Sukhumvit 21 Bangkok"),
+          mapLink("Don Mueang T1", "Don Mueang International Airport Terminal 1"),
+          mapLink("Luang Prabang International Airport", "Luang Prabang International Airport"),
+          mapLink("Villa Nirasim", "Villa Nirasim Luang Prabang"),
+          mapLink("Sisavangvong Road Night Market", "Luang Prabang Night Market Sisavangvong Road"),
+          mapLink("Khem Kong Road", "Khem Kong Road Luang Prabang"),
+        ],
+      },
       {
         title: "航班信息",
         items: [
@@ -688,6 +796,20 @@ const itinerary = [
     ],
     panels: [
       {
+        title: "地点地图",
+        items: [
+          "托钵、早市、寺庙、普西山和夜市都可直接打开地图；清晨建议提前离线收藏。",
+        ],
+        links: [
+          mapLink("Villa Nirasim", "Villa Nirasim Luang Prabang"),
+          mapLink("Talad Sao 早市", "Talad Sao Luang Prabang morning market"),
+          mapLink("Wat Xieng Thong 香通寺", "Wat Xieng Thong"),
+          mapLink("Mount Phousi 普西山", "Mount Phousi Luang Prabang"),
+          mapLink("Luang Prabang Night Market", "Luang Prabang Night Market"),
+          mapLink("Mekong Riverfront", "Mekong Riverfront Luang Prabang"),
+        ],
+      },
+      {
         title: "托钵礼仪",
         items: [
           "官方提示 3-10 月托钵约 05:30-06:30；这不是表演，是当地人的宗教生活。",
@@ -743,6 +865,20 @@ const itinerary = [
     ],
     panels: [
       {
+        title: "地点地图",
+        items: [
+          "关西瀑布和下午文化点都放在这里；雨季出发前先看实时路线和路况。",
+        ],
+        links: [
+          mapLink("Villa Nirasim", "Villa Nirasim Luang Prabang"),
+          mapLink("Kuang Si Waterfall 关西瀑布", "Kuang Si Waterfall"),
+          mapLink("Tat Kuang Si Bear Rescue Centre", "Tat Kuang Si Bear Rescue Centre"),
+          mapLink("UXO Visitor Centre", "UXO Visitor Centre Luang Prabang"),
+          mapLink("TAEC 民族艺术中心", "Traditional Arts and Ethnology Centre Luang Prabang"),
+          mapLink("Royal Ballet Theatre", "Phralak Phralam Theatre Luang Prabang"),
+        ],
+      },
+      {
         title: "关西瀑布交通与门票",
         items: [
           "官方信息：关西瀑布约 08:00-17:30，外国人门票 60,000 kip（约¥18）。",
@@ -788,6 +924,20 @@ const itinerary = [
       { time: "21:10", text: "抵达广州白云机场" },
     ],
     panels: [
+      {
+        title: "地点地图",
+        items: [
+          "返程涉及酒店、机场和两个中国机场；出发前建议把机场航站楼链接都打开确认一次。",
+        ],
+        links: [
+          mapLink("Villa Nirasim", "Villa Nirasim Luang Prabang"),
+          mapLink("Luang Prabang International Airport", "Luang Prabang International Airport"),
+          mapLink("Kunming Changshui International Airport", "Kunming Changshui International Airport"),
+          mapLink("Guangzhou Baiyun International Airport T3", "Guangzhou Baiyun International Airport Terminal 3"),
+          mapLink("Talad Sao 早市", "Talad Sao Luang Prabang morning market"),
+          mapLink("Mekong Riverfront", "Mekong Riverfront Luang Prabang"),
+        ],
+      },
       {
         title: "最后一个早晨",
         items: [
@@ -835,7 +985,14 @@ const itinerary = [
 ];
 
 const transit = [
-  { title: "广州白云 T3 → 金边德崇机场", meta: ["8.6", "柬埔寨国家航空 K60611 已购", "05:00 - 06:50"] },
+  {
+    title: "广州白云 T3 → 金边德崇机场",
+    meta: ["8.6", "柬埔寨国家航空 K60611 已购", "05:00 - 06:50"],
+    links: [
+      mapLink("广州白云 T3", "Guangzhou Baiyun International Airport Terminal 3"),
+      mapLink("Techo International Airport / KTI", "Techo International Airport Phnom Penh"),
+    ],
+  },
   {
     title: "金边 → 暹粒",
     meta: [
@@ -845,10 +1002,39 @@ const transit = [
       "上车：Phnom Penh, France St.47",
       "下车：Siem Reap, Chong Kaosou Village",
     ],
+    links: [
+      mapLink("上车点 France St.47", "Phnom Penh France St.47"),
+      mapLink("下车点 Chong Kaosou Village", "Siem Reap Chong Kaosou Village"),
+      mapLink("Home Indochine d'Angkor", "Home Indochine d'Angkor Siem Reap"),
+    ],
   },
-  { title: "暹粒吴哥机场 → 曼谷廊曼 T1", meta: ["8.10", "泰国亚航 FD0615 已购", "16:55 - 18:05"] },
-  { title: "曼谷廊曼 T1 → 琅勃拉邦机场", meta: ["8.12", "泰国亚航 FD1030 已购", "13:25 - 14:50"] },
-  { title: "琅勃拉邦 → 昆明 → 广州", meta: ["8.15", "东方航空 MU9644 + MU5739 已购联程", "13:30 - 21:10"] },
+  {
+    title: "暹粒吴哥机场 → 曼谷廊曼 T1",
+    meta: ["8.10", "泰国亚航 FD0615 已购", "16:55 - 18:05"],
+    links: [
+      mapLink("SAI 暹粒吴哥机场", "Siem Reap Angkor International Airport"),
+      mapLink("DMK 廊曼 T1", "Don Mueang International Airport Terminal 1"),
+      mapLink("3Howw Hostel Sukhumvit 21", "3Howw Hostel at Sukhumvit 21 Bangkok"),
+    ],
+  },
+  {
+    title: "曼谷廊曼 T1 → 琅勃拉邦机场",
+    meta: ["8.12", "泰国亚航 FD1030 已购", "13:25 - 14:50"],
+    links: [
+      mapLink("DMK 廊曼 T1", "Don Mueang International Airport Terminal 1"),
+      mapLink("Luang Prabang Airport", "Luang Prabang International Airport"),
+      mapLink("Villa Nirasim", "Villa Nirasim Luang Prabang"),
+    ],
+  },
+  {
+    title: "琅勃拉邦 → 昆明 → 广州",
+    meta: ["8.15", "东方航空 MU9644 + MU5739 已购联程", "13:30 - 21:10"],
+    links: [
+      mapLink("Luang Prabang Airport", "Luang Prabang International Airport"),
+      mapLink("昆明长水机场", "Kunming Changshui International Airport"),
+      mapLink("广州白云 T3", "Guangzhou Baiyun International Airport Terminal 3"),
+    ],
+  },
 ];
 
 const stays = [
@@ -863,6 +1049,7 @@ const stays = [
       "距 Pub Street / Old Market / Angkor Night Market 约 1 km，去吴哥窟约 8.2 km；暹粒吴哥国际机场约 45 km，车程约 54-60 分钟。",
     ],
     links: [
+      mapLink("Google Maps", "Home Indochine d'Angkor Siem Reap"),
       { label: "官网", url: sources.homeIndochine },
       { label: "Booking", url: sources.homeIndochineBooking },
       { label: "Trip.com", url: sources.homeIndochineTrip },
@@ -880,6 +1067,7 @@ const stays = [
       "距 MRT Sukhumvit 约 0.38 km，BTS Asok / Terminal 21 步行可达；廊曼机场约 24 km，车程约 32 分钟。",
     ],
     links: [
+      mapLink("Google Maps", "3Howw Hostel at Sukhumvit 21 Bangkok"),
       { label: "Booking", url: sources.howwBooking },
       { label: "Trip.com", url: sources.howwTrip },
     ],
@@ -896,6 +1084,7 @@ const stays = [
       "离琅勃拉邦机场约 5.3 km，车程约 14 分钟。",
     ],
     links: [
+      mapLink("Google Maps", "Villa Nirasim Luang Prabang"),
       { label: "Booking", url: sources.nirasimBooking },
       { label: "Trip.com", url: sources.nirasimTrip },
     ],
