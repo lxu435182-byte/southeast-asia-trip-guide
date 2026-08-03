@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>吴哥三日票路线图 | 2026.8.7-8.9</title>
+    <title>吴哥路线图 | 2026.8.7-8.10</title>
     <style>
       :root {
         color-scheme: light;
@@ -389,13 +389,14 @@
           <p class="eyebrow">Angkor 3-day pass</p>
           <h1>吴哥三日票现场路线图</h1>
           <p class="intro">
-            按你们 8.6 夜巴、8.7 早到暹粒、8.10 下午飞机的节奏重排：8.7 轻量远寺，8.8 小圈精华，8.9 大圈精选，8.10 不进景区。每一天都留出吃饭和午休，累了就按卡片里的“可删点”收缩。
+            按你们 8.6 夜巴、8.7 早到暹粒、8.10 下午飞机的节奏重排：8.7 市区恢复 + 洞里萨湖日落，不使用吴哥票；8.8-8.10 连用三日票，最后一天只走上午短线。每一天都留出吃饭和午休，累了就按卡片里的“可删点”收缩。
           </p>
         </div>
         <aside class="hero-summary" aria-label="路线摘要">
-          <div class="summary-row"><strong>8.7</strong><span>女王宫线：坐车多、步行少，夜巴后不硬撑。</span></div>
+          <div class="summary-row"><strong>8.7</strong><span>市区 + 洞里萨湖：夜巴后恢复体力，下午看 Kampong Phluk 日落。</span></div>
           <div class="summary-row"><strong>8.8</strong><span>小圈精华：吴哥寺、巴戎、塔布茏，一天抓住核心。</span></div>
-          <div class="summary-row"><strong>8.9</strong><span>大圈精选：圣剑寺、龙蟠水池、塔逊，安静有遗址感。</span></div>
+          <div class="summary-row"><strong>8.9</strong><span>女王宫 + 圣剑寺：远寺上午看，下午留给圣剑寺。</span></div>
+          <div class="summary-row"><strong>8.10</strong><span>大圈短线：塔逊、东梅奔、比粒寺，11:30 前回酒店。</span></div>
         </aside>
       </section>
 
@@ -431,54 +432,34 @@
         {
           id: "day-1",
           date: "8.7",
-          title: "女王宫线：夜巴后轻量开局",
-          subtitle: "酒店出发，下午看雕刻精华；不安排日出，不压体力。",
-          tags: ["14:00 出发", "2 个必看点", "步行轻"],
+          title: "暹粒市区 + 洞里萨湖日落",
+          subtitle: "不使用吴哥三日票。上午恢复体力、熟悉市区，下午去 Kampong Phluk 看雨季湖面和日落。",
+          tags: ["不使用吴哥票", "14:00 出发", "包车/半日团"],
           mapLink:
-            "https://www.google.com/maps/dir/?api=1&origin=Home+Indochine+d%27Angkor,+Siem+Reap&destination=Home+Indochine+d%27Angkor,+Siem+Reap&waypoints=Angkor+Ticket+Office%7CBanteay+Srei%7CBanteay+Samre%7CPre+Rup&travelmode=driving",
+            "https://www.google.com/maps/dir/?api=1&origin=Home+Indochine+d%27Angkor,+Siem+Reap&destination=Home+Indochine+d%27Angkor,+Siem+Reap&waypoints=Wat+Bo,+Siem+Reap%7COld+Market,+Siem+Reap%7CKampong+Phluk&travelmode=driving",
           streetLink: "https://www.google.com/maps/about/behind-the-scenes/streetview/treks/angkor/",
           timeline: [
             ["05:58", "到暹粒 Larryta 终点，先去酒店寄存行李、吃早餐、补觉。"],
-            ["14:00", "从酒店出发，先过票务/验票点，再去女王宫。"],
-            ["15:00", "女王宫慢看门楣和山墙浮雕，不赶时间。"],
-            ["16:45", "班提色玛走中央轴线，游客少，适合安静收尾。"],
-            ["17:45", "比粒寺只作为可选夕阳点；累了直接回酒店。"]
+            ["10:00", "Wat Bo、暹粒河边、Old Market 轻松逛，不暴走。"],
+            ["12:30", "回酒店午休，换衣服，带雨具、防蚊和防水袋。"],
+            ["14:00", "酒店出发去 Kampong Phluk 码头，优先包车或酒店半日团。"],
+            ["15:20", "上船看浮村、高脚屋、水道和湖面。"],
+            ["17:45", "洞里萨湖日落，结束后直接返回市区吃饭休息。"]
           ],
           points: [
             { name: "酒店", label: "Home", lat: 13.35192, lng: 103.86293, type: "base" },
-            { name: "票务/验票", label: "票", lat: 13.3777, lng: 103.8614, type: "ticket" },
+            { name: "Wat Bo", label: "1", lat: 13.35495, lng: 103.86291, type: "ticket" },
+            { name: "Old Market", label: "2", lat: 13.35417, lng: 103.85417, type: "ticket" },
             {
-              name: "女王宫",
-              en: "Banteay Srei",
-              label: "1",
-              lat: 13.599024,
-              lng: 103.962985,
-              minutes: "70 分钟",
-              image: img("Banteay Srei full.jpg"),
-              note: "红砂岩精雕细刻，是这天的核心。重点看门楣、山墙、神话浮雕。",
-              maps: "https://www.google.com/maps/search/?api=1&query=Banteay+Srei"
-            },
-            {
-              name: "班提色玛",
-              en: "Banteay Samre",
-              label: "2",
-              lat: 13.442103,
-              lng: 103.958924,
-              minutes: "35-45 分钟",
-              image: img("Banteay Samré, Angkor 10.jpg"),
-              note: "结构完整、人少，沿外门、参道、中央殿堂绕一圈即可。",
-              maps: "https://www.google.com/maps/search/?api=1&query=Banteay+Samre"
-            },
-            {
-              name: "比粒寺",
-              en: "Pre Rup",
-              label: "可选",
-              lat: 13.43496,
-              lng: 103.92057,
-              minutes: "25-35 分钟",
-              image: img("Pre Rup temple.jpg"),
-              note: "只在天气好且不累时看夕阳；雨天或疲惫直接删。",
-              maps: "https://www.google.com/maps/search/?api=1&query=Pre+Rup"
+              name: "Kampong Phluk",
+              en: "洞里萨湖浮村",
+              label: "3",
+              lat: 13.2092,
+              lng: 103.9728,
+              minutes: "3-4 小时",
+              image: img("Kampong Phluk floating village Cambodia.jpg"),
+              note: "雨季水位更适合看高脚屋、浮村和湖面。提前确认船费、路线、是否等日落和返程等待。",
+              maps: "https://www.google.com/maps/search/?api=1&query=Kampong+Phluk"
             }
           ]
         },
@@ -572,48 +553,91 @@
         {
           id: "day-3",
           date: "8.9",
-          title: "大圈精选：安静、纵深、雨季水景",
-          subtitle: "不强行早起，上午看最值得的大圈寺庙，下午只保留一个弹性夕阳点。",
-          tags: ["07:30 出发", "上午重点", "下午可休"],
+          title: "女王宫 + 圣剑寺精选日",
+          subtitle: "女王宫较远，上午优先包车；中午回酒店午休，下午看圣剑寺和龙蟠水池。",
+          tags: ["07:30 出发", "包车优先", "2 个必看点"],
           mapLink:
-            "https://www.google.com/maps/dir/?api=1&origin=Home+Indochine+d%27Angkor,+Siem+Reap&destination=Home+Indochine+d%27Angkor,+Siem+Reap&waypoints=Preah+Khan+Temple%7CNeak+Pean%7CTa+Som%7CEast+Mebon%7CPre+Rup&travelmode=driving",
+            "https://www.google.com/maps/dir/?api=1&origin=Home+Indochine+d%27Angkor,+Siem+Reap&destination=Home+Indochine+d%27Angkor,+Siem+Reap&waypoints=Banteay+Srei%7CBanteay+Samre%7CPreah+Khan+Temple%7CNeak+Pean&travelmode=driving",
           streetLink: "https://www.google.com/maps/about/behind-the-scenes/streetview/treks/angkor/",
           timeline: [
-            ["07:30", "酒店出发，不再强行日出。"],
-            ["08:00", "圣剑寺西门进、东门出，尽量不走回头路。"],
-            ["09:50", "龙蟠水池走木栈道，看雨季水面。"],
-            ["10:45", "塔逊看东门树门，小而精。"],
-            ["11:45", "东梅奔短停，随后午饭 + 回酒店休息。"],
-            ["16:00", "比粒寺夕阳可选；如果累了，下午完全不进景区。"]
+            ["07:30", "酒店出发去女王宫，路远，包车舒适度高很多。"],
+            ["08:30", "女王宫慢看红砂岩门楣、山墙和精细浮雕。"],
+            ["10:40", "班提色玛可选，人少、结构完整，累了直接删。"],
+            ["12:15", "午饭 + 回酒店午休，这段必须留。"],
+            ["15:20", "圣剑寺西门进、东门出，让司机到东门接。"],
+            ["16:55", "龙蟠水池走木栈道，雨季水面氛围好。"]
           ],
           points: [
             { name: "酒店", label: "Home", lat: 13.35192, lng: 103.86293, type: "base" },
             {
+              name: "女王宫",
+              en: "Banteay Srei",
+              label: "1",
+              lat: 13.599024,
+              lng: 103.962985,
+              minutes: "75 分钟",
+              image: img("Banteay Srei full.jpg"),
+              note: "红砂岩雕刻精华，是这天上午的核心。重点看门楣、山墙和神话浮雕。",
+              maps: "https://www.google.com/maps/search/?api=1&query=Banteay+Srei"
+            },
+            {
+              name: "班提色玛",
+              en: "Banteay Samre",
+              label: "可选",
+              lat: 13.442103,
+              lng: 103.958924,
+              minutes: "35-45 分钟",
+              image: img("Banteay Samré, Angkor 10.jpg"),
+              note: "人少、结构完整，是女王宫回程路上的加分项；体力不足时直接删。",
+              maps: "https://www.google.com/maps/search/?api=1&query=Banteay+Samre"
+            },
+            {
               name: "圣剑寺",
               en: "Preah Khan",
-              label: "1",
+              label: "2",
               lat: 13.46188,
               lng: 103.87158,
               minutes: "80-90 分钟",
               image: img("Entrance to the Preah Khan temple, Angkor, Cambodia.jpg"),
-              note: "大圈最值得细看的点。西门进，穿过中央长廊，从东门出。",
+              note: "下午的必看点。西门进，穿过中央长廊，从东门出，避免走回头路。",
               maps: "https://www.google.com/maps/search/?api=1&query=Preah+Khan+Temple"
             },
             {
               name: "龙蟠水池",
               en: "Neak Pean",
-              label: "2",
+              label: "可选",
               lat: 13.4636,
               lng: 103.8954,
               minutes: "25-35 分钟",
               image: img("Neak pean 2009 1.jpg"),
               note: "停车点到中央水池要走木栈道；雨季水面更好看。",
               maps: "https://www.google.com/maps/search/?api=1&query=Neak+Pean"
-            },
+            }
+          ]
+        },
+        {
+          id: "day-4",
+          date: "8.10",
+          title: "大圈短线收尾 + 机场",
+          subtitle: "上午只走塔逊、东梅奔、比粒寺，11:30 前回酒店；下午按 16:55 航班节奏去 SAI 机场。",
+          tags: ["07:30 出发", "半日短线", "13:30 去机场"],
+          mapLink:
+            "https://www.google.com/maps/dir/?api=1&origin=Home+Indochine+d%27Angkor,+Siem+Reap&destination=Home+Indochine+d%27Angkor,+Siem+Reap&waypoints=Ta+Som%7CEast+Mebon%7CPre+Rup&travelmode=driving",
+          streetLink: "https://www.google.com/maps/dir/?api=1&origin=Home+Indochine+d%27Angkor,+Siem+Reap&destination=Siem+Reap+Angkor+International+Airport&travelmode=driving",
+          timeline: [
+            ["07:30", "酒店出发去塔逊，上午 tuk-tuk 半日即可。"],
+            ["08:15", "塔逊西门进，重点走到东门树门。"],
+            ["09:10", "东梅奔短停，看砖塔和象雕。"],
+            ["10:00", "比粒寺作为最后一座金字塔式寺庙，别爬太猛。"],
+            ["11:30", "回酒店洗澡、收拾、退房/寄存。"],
+            ["13:30", "最晚从酒店去 SAI 机场，衔接 16:55 航班。"]
+          ],
+          points: [
+            { name: "酒店", label: "Home", lat: 13.35192, lng: 103.86293, type: "base" },
             {
               name: "塔逊",
               en: "Ta Som",
-              label: "3",
+              label: "1",
               lat: 13.46466,
               lng: 103.91301,
               minutes: "30-40 分钟",
@@ -624,7 +648,7 @@
             {
               name: "东梅奔",
               en: "East Mebon",
-              label: "4",
+              label: "2",
               lat: 13.446605,
               lng: 103.920209,
               minutes: "30-40 分钟",
@@ -635,12 +659,12 @@
             {
               name: "比粒寺",
               en: "Pre Rup",
-              label: "可选",
+              label: "3",
               lat: 13.43496,
               lng: 103.92057,
               minutes: "30-45 分钟",
               image: img("Prè Rup (Angkor) (6953384297).jpg"),
-              note: "下午天气好再去；如果 8.7 已看过，建议直接删，保留休息。",
+              note: "最后一座金字塔式寺庙。离开日只短停，不要为了登高消耗太多体力。",
               maps: "https://www.google.com/maps/search/?api=1&query=Pre+Rup"
             }
           ]

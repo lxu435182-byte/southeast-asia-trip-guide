@@ -28,7 +28,7 @@ jobs:
       - name: Prepare static files
         run: |
           mkdir _site
-          cp index.html styles.css script.js _site/
+          cp index.html styles.css script.js angkor-route-maps.html _site/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
