@@ -252,7 +252,7 @@ const itinerary = [
       { time: "15:30-16:45", text: "National Museum 柬埔寨国家博物馆，可帮助理解后面吴哥文物" },
       { time: "17:00-18:00", text: "Wat Phnom 或河边坐着休息；如果困到不行就直接删" },
       { time: "18:00-20:00", text: "Night Market / Riverside 晚餐，买水、湿巾、零食，提前确认夜巴上车点" },
-      { time: "23:58", text: "金边乘坐 Larryta Bus 卧铺夜巴前往暹粒" },
+      { time: "23:45", text: "金边乘坐 Larryta Bus 卧铺夜巴前往暹粒：Phnom Penh, France St.47 → Siem Reap, Chong Kaosou Village" },
     ],
     panels: [
       {
@@ -323,9 +323,10 @@ const itinerary = [
       {
         title: "夜巴事项",
         items: [
-          "Larryta Bus 订单截图、上车点地址、车牌/柜台信息放手机相册置顶；如果实际改成 Giant Ibis，它的金边站在 Road 106 / Night Market 一带。",
+          "Larryta Bus 夜巴票面信息：Ref no F26-YmO406，出发 2026-08-06 11:45 PM，方向 PNH-SRP，座位 4、7、8，金额 KHR 207,000。",
+          "上车点：Phnom Penh, France St.47；下车点：Siem Reap, Chong Kaosou Village。把订单截图、上车点地址、车牌/柜台信息放手机相册置顶。",
           "护照、钱包、手机、充电宝随身不离身；大件行李拍照后再放行李舱。",
-          "18:00-20:00 在 Night Market / Riverside 附近吃晚饭，买水、湿巾、面包/零食；提前 45-60 分钟到车站/办公室确认座位、行李牌和上车点。",
+          "18:00-20:00 在 Night Market / Riverside 附近吃晚饭，买水、湿巾、面包/零食；提前 45-60 分钟到 France St.47 上车点确认座位、行李牌和上车位置。",
           "夜巴前不要吃太撑，也别喝酒；金边夜间移动优先用正规打车 App 或酒店/车站协助叫车。",
         ],
         links: [{ label: "Giant Ibis branches", url: sources.giantIbisBranches }],
@@ -339,7 +340,7 @@ const itinerary = [
     label: "暹粒市区恢复 · 洞里萨湖日落",
     open: true,
     events: [
-      { time: "05:58", text: "抵达暹粒 Larryta 夜巴终点" },
+      { time: "清晨", text: "抵达 Siem Reap, Chong Kaosou Village，下车后打 Grab / PassApp / tuk-tuk 去 Home Indochine d'Angkor" },
       { time: "06:30-09:30", text: "到 Home Indochine d'Angkor 寄存行李，早餐、洗漱、补觉，问 early check-in" },
       { time: "10:00-11:30", text: "Wat Bo / 暹粒河边 / Old Market 老市场轻松逛" },
       { time: "11:30-14:00", text: "午饭 + 酒店午休，换衣服，带雨具、防蚊和防水袋" },
@@ -376,7 +377,7 @@ const itinerary = [
           "Home Indochine d'Angkor Hotel：Street 27 / Street27, Wat Bo Village, Siem Reap, Cambodia。",
           "电话：+855 92 660 288；邮箱：info@home.indochinegroup.com。",
           "入住 14:00 后，退房 12:00 前；前台 24 小时。可提前问 early check-in、寄存行李或洗澡。",
-          "Larryta 暹粒站在 National Road 6，可打 Grab/PassApp/tuk-tuk 去酒店。",
+          "夜巴下车点为 Siem Reap, Chong Kaosou Village；清晨下车后可打 Grab/PassApp/tuk-tuk 去酒店。",
         ],
         links: [
           { label: "酒店官网", url: sources.homeIndochine },
@@ -835,7 +836,16 @@ const itinerary = [
 
 const transit = [
   { title: "广州白云 T3 → 金边德崇机场", meta: ["8.6", "柬埔寨国家航空 K60611 已购", "05:00 - 06:50"] },
-  { title: "金边 → 暹粒", meta: ["8.6 - 8.7", "Larryta Bus 卧铺夜巴", "23:58 - 05:58"] },
+  {
+    title: "金边 → 暹粒",
+    meta: [
+      "8.6 - 8.7",
+      "Larryta Bus 卧铺夜巴 · Ref F26-YmO406",
+      "23:45 出发 · 座位 4,7,8 · KHR 207,000",
+      "上车：Phnom Penh, France St.47",
+      "下车：Siem Reap, Chong Kaosou Village",
+    ],
+  },
   { title: "暹粒吴哥机场 → 曼谷廊曼 T1", meta: ["8.10", "泰国亚航 FD0615 已购", "16:55 - 18:05"] },
   { title: "曼谷廊曼 T1 → 琅勃拉邦机场", meta: ["8.12", "泰国亚航 FD1030 已购", "13:25 - 14:50"] },
   { title: "琅勃拉邦 → 昆明 → 广州", meta: ["8.15", "东方航空 MU9644 + MU5739 已购联程", "13:30 - 21:10"] },
